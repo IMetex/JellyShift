@@ -18,6 +18,8 @@ namespace JellyShift.Manager
         public event Action<int> ScoreChanged;
 
         public int HighScore { get; set; }
+        
+        public int TotalDiamond { get; set; }
 
         private int _diamondScore;
 

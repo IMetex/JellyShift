@@ -9,6 +9,8 @@ namespace JellyShift.Animation
     {
         private bool _isPlayed;
         private Sequence _idleAnimation;
+        [SerializeField] private Vector3 scale;
+        [SerializeField] private float duration;
 
         private void OnEnable()
         {
@@ -31,7 +33,7 @@ namespace JellyShift.Animation
             if (!_isPlayed)
             {
                 _idleAnimation = DOTween.Sequence()
-                    .Append(transform.DOScale(new Vector3(2.1f, 1.1f, 1f), 0.5f))
+                    .Append(transform.DOScale(scale, duration))
                     .SetLoops(-1, LoopType.Yoyo)
                     .SetEase(Ease.OutBack);
 
