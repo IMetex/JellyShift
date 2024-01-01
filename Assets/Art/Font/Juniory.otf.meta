@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b9daf45f3df223b4292bfda875b57eae
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Juniory
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b53e9217955852c4d88b0824a8b9f41e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
