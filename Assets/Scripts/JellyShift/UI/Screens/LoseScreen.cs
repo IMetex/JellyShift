@@ -23,6 +23,7 @@ namespace JellyShift.UI.Screens
         private void OnDisable()
         {
             restartBtn.onClick.RemoveListener(OnRestartButtonClicked);
+            transform.DOKill();
         }
 
         private void OnRestartButtonClicked()
@@ -40,7 +41,7 @@ namespace JellyShift.UI.Screens
         private void LoseValuesText()
         {
             scoreText.text = "Score: " + GameManager.Instance.Score;
-            diamondText.text = GameManager.Instance.DiamondScore.ToString();
+            diamondText.text = GameManager.Instance.CollectDiamondCount.ToString();
         }
     }
 }

@@ -1,7 +1,6 @@
-using System;
-using JellyShift.Camera;
 using JellyShift.Manager;
 using UnityEngine;
+
 
 namespace JellyShift.Controller
 {

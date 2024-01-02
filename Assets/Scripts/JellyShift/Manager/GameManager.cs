@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using JellyShift.Animation;
 using UnityEngine.SceneManagement;
 using JellyShift.Singleton;
 using UnityEngine;
@@ -10,18 +7,42 @@ namespace JellyShift.Manager
 {
     public class GameManager : Singleton<GameManager>
     {
-        public bool IsGameStarted { get; private set; }
+        #region Private Int Values
+
+        private int _score;
+        private int _diamondScore;
+
+        #endregion
+
+        #region Events
 
         public event Action GameStarted;
         public event Action GameEnded;
         public event Action<int> DiamondChanged;
         public event Action<int> ScoreChanged;
 
-        public int HighScore { get; set; }
-        
-        public int TotalDiamond { get; set; }
+        #endregion
 
-        private int _diamondScore;
+        #region String Hash
+
+        private const string HighScorePrefsString = "HighScore";
+        private const string TotalDiamondPrefsString = "TotalDiamond";
+
+        #endregion
+
+        public bool IsGameStarted { get; private set; }
+        public int CollectDiamondCount { get; private set; }
+
+        public int HighScore
+        {
+            get => PlayerPrefs.GetInt(HighScorePrefsString, 0);
+        }
+
+        public int TotalDiamondScore
+        {
+            get => PlayerPrefs.GetInt(TotalDiamondPrefsString, 0);
+        }
+
 
         public int DiamondScore
         {
@@ -32,8 +53,6 @@ namespace JellyShift.Manager
                 DiamondChanged?.Invoke(_diamondScore);
             }
         }
-
-        private int _score;
 
         public int Score
         {
@@ -55,6 +74,8 @@ namespace JellyShift.Manager
         public void EndGame()
         {
             IsGameStarted = false;
+            SaveHighScore();
+            SaveTotalDiamondScore();
             GameEnded?.Invoke();
         }
 
@@ -62,11 +83,27 @@ namespace JellyShift.Manager
         {
             SceneManager.LoadScene(0);
         }
-        
+
         private void SetValues()
         {
             _score = 0;
             _diamondScore = 0;
+        }
+
+        private void SaveHighScore()
+        {
+            if (_score > PlayerPrefs.GetInt(HighScorePrefsString))
+            {
+                PlayerPrefs.SetInt(HighScorePrefsString, _score);
+            }
+        }
+
+        private void SaveTotalDiamondScore()
+        {
+            PlayerPrefs.SetInt(TotalDiamondPrefsString, TotalDiamondScore + _diamondScore);
+            CollectDiamondCount = _diamondScore;
+            _diamondScore = 0;
+            DiamondChanged?.Invoke(_diamondScore);
         }
     }
 }

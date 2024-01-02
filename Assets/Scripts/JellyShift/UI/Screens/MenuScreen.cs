@@ -24,6 +24,7 @@ namespace JellyShift.UI.Screens
         private void OnDisable()
         {
             playBtn.onClick.RemoveListener(OnPlayButtonClicked);
+            
         }
 
         private void OnPlayButtonClicked()
@@ -34,7 +35,6 @@ namespace JellyShift.UI.Screens
         public void Open()
         {
             gameObject.SetActive(true);
-           
             canvasGroup.DOFade(1, 0.2f).From(0);
             containerTransform.DOLocalMoveY(0, 0.7f)
                 .From(-300)
@@ -50,7 +50,7 @@ namespace JellyShift.UI.Screens
 
         private void MenuDiamondText()
         {
-            diamondText.text = GameManager.Instance.TotalDiamond.ToString();
+            diamondText.text = GameManager.Instance.TotalDiamondScore.ToString();
         }
 
         private void DisplayHighScoreText()

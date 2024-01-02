@@ -13,7 +13,7 @@ namespace JellyShift.UI
 
         void Start()
         {
-            menuScreen.Open();
+            ResetUIState();
         }
 
         private void OnEnable()
@@ -38,6 +38,13 @@ namespace JellyShift.UI
         {
             gameScreen.SetActive(false);
             loseScreen.SetActive(true);
+        }
+        
+        public void ResetUIState()
+        {
+            menuScreen.Open();
+            gameScreen.SetActive(false);
+            loseScreen.SetActive(false);
         }
     }
 }

@@ -1,13 +1,13 @@
 using JellyShift.Manager;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace JellyShift.UI.Display
 {
     public class DiamondDisplay : MonoBehaviour
     {
         [SerializeField] private TMP_Text diamondText;
+        
         private void OnEnable()
         {
             GameManager.Instance.DiamondChanged += OnDiamondChanged;
