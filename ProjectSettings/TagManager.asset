@@ -10,6 +10,7 @@ TagManager:
   - ColorTrigger
   - Score
   - Diamond
+  - Deactivate
   layers:
   - Default
   - TransparentFX

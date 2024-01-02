@@ -13,7 +13,8 @@ namespace JellyShift
         [SerializeField] private Material incorrectMat;
         
         private const string ColorTriggerTag = "ColorTrigger";
-        private void OnTriggerEnter(Collider other)
+        
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.CompareTag(ColorTriggerTag))
             {
@@ -28,6 +29,10 @@ namespace JellyShift
                 renderer.material = incorrectMat;
             }
         }
-        
+
+        public void InCorrectMat()
+        {
+            renderer.material = incorrectMat;
+        }
     }
 }

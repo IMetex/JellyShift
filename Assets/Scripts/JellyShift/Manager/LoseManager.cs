@@ -1,20 +1,23 @@
-using System;
 using DG.Tweening;
-using JellyShift.Manager;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace JellyShift.Controller
+namespace JellyShift.Manager
 {
-    public class LoseController : MonoBehaviour
+    public class LoseManager : MonoBehaviour
     {
         private const string ObstacleTag = "Obstacle";
         private bool _isBouncing;
+        [SerializeField] private AudioSource mainAudioSource;
+        [SerializeField] private AudioSource loseAudioSource;
         
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag(ObstacleTag) && !_isBouncing)
             {
                 Bounce();
+                mainAudioSource.Stop();
+                loseAudioSource.Play();
                 GameManager.Instance.EndGame();
             }
         }

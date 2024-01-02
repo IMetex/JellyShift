@@ -36,6 +36,7 @@ namespace JellyShift.UI.Screens
         private void OnMainButtonClicked()
         {
             GameManager.Instance.RestartLevel();
+            GameManager.Instance.IsGameStarted = false;
             ResumeGame();
         }
 

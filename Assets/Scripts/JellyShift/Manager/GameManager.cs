@@ -30,7 +30,7 @@ namespace JellyShift.Manager
 
         #endregion
 
-        public bool IsGameStarted { get; private set; }
+        public bool IsGameStarted { get; set; }
         public int CollectDiamondCount { get; private set; }
 
         public int HighScore

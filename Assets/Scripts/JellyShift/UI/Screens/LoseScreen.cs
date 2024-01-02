@@ -23,7 +23,6 @@ namespace JellyShift.UI.Screens
         private void OnDisable()
         {
             restartBtn.onClick.RemoveListener(OnRestartButtonClicked);
-            transform.DOKill();
         }
 
         private void OnRestartButtonClicked()

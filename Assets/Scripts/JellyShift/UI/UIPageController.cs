@@ -1,3 +1,4 @@
+using System;
 using JellyShift.Manager;
 using JellyShift.UI.Screens;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace JellyShift.UI
         [SerializeField] private GameObject gameScreen;
         [SerializeField] private GameObject loseScreen;
 
-        void Start()
+        private void Start()
         {
             ResetUIState();
         }
