@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2039219552056307251}
   - component: {fileID: 7340168091759376053}
   - component: {fileID: -3569656203721075695}
+  - component: {fileID: 4841524975907279405}
   m_Layer: 0
   m_Name: DiamondParent3
   m_TagString: Untagged
@@ -51,7 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eafd1316204344428110c32a4c1d5cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
+  forwardSpeed: 13
+  speedIncreaseRate: 0.5
+  maxForwardSpeed: 35
+  isObstacle: 0
 --- !u!65 &7340168091759376053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83,6 +87,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ee093c958cd4fafa6a77b671ff62d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4841524975907279405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433014079787232022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48a08ad818d4aec80e3506b522e39f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1433014079808829347

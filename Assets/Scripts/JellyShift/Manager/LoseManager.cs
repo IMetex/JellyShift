@@ -8,20 +8,20 @@ namespace JellyShift.Manager
     {
         private const string ObstacleTag = "Obstacle";
         private bool _isBouncing;
-        [SerializeField] private AudioSource mainAudioSource;
-        [SerializeField] private AudioSource loseAudioSource;
-        
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag(ObstacleTag) && !_isBouncing)
+            if (other.gameObject.CompareTag(ObstacleTag))
             {
-                Bounce();
-                mainAudioSource.Stop();
-                loseAudioSource.Play();
-                GameManager.Instance.EndGame();
+                if (!_isBouncing)
+                {
+                    _isBouncing = true;
+                    Bounce();
+                    GameManager.Instance.EndGame();
+                }
             }
         }
-        
+
         private void Bounce()
         {
             _isBouncing = true;

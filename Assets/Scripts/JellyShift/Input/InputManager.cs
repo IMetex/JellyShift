@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using JellyShift.Controller;
 using JellyShift.Manager;
@@ -6,11 +7,15 @@ namespace JellyShift.Input
 {
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] private ScaleController _scaleController;
-
+        private ScaleController _scaleController;
         private Vector3 _startDragPosition;
         private float _firstTouchY;
         private bool _isDragging;
+
+        private void Awake()
+        {
+            _scaleController = GetComponent<ScaleController>();
+        }
 
         void Update()
         {

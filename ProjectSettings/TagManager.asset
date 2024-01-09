@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Deactivate
+  - ColorTrigger
+  - Collider
+  - Score
+  - Diamond
+  - Obstacle
+  - particle
+  - Obj
   layers:
   - Default
   - TransparentFX

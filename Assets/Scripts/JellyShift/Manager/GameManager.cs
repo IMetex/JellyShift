@@ -14,7 +14,7 @@ namespace JellyShift.Manager
         private int _score;
         private int _diamondScore;
         private int _totalDiamondScore;
-        
+
         #endregion
 
         #region Events
@@ -33,7 +33,7 @@ namespace JellyShift.Manager
         private const string TotalDiamondPrefsString = "TotalDiamond";
 
         #endregion
-        
+
         public bool IsGameStarted { get; set; }
         public int CollectDiamondCount { get; set; }
 
@@ -41,7 +41,7 @@ namespace JellyShift.Manager
         {
             get => PlayerPrefs.GetInt(HighScorePrefsString, 0);
         }
-        
+
         public int TotalDiamondScore
         {
             get => PlayerPrefs.GetInt(TotalDiamondPrefsString, 0);
@@ -85,7 +85,7 @@ namespace JellyShift.Manager
         {
             IsGameStarted = false;
             SaveHighScore();
-           SaveTotalDiamondScore();
+            SaveTotalDiamondScore();
             GameEnded?.Invoke();
         }
 
@@ -107,7 +107,7 @@ namespace JellyShift.Manager
                 PlayerPrefs.SetInt(HighScorePrefsString, _score);
             }
         }
-        
+
         private void SaveTotalDiamondScore()
         {
             CollectDiamondCount = _diamondScore;

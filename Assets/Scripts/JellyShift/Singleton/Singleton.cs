@@ -11,7 +11,6 @@ namespace JellyShift.Singleton
             if (Instance == null)
             {
                 Instance = this as T;
-                DontDestroyOnLoad(this.gameObject);
             }
             else
             {

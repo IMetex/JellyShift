@@ -11,14 +11,12 @@ namespace JellyShift.Controller
     {
         private const string ScoreTag = "Score";
         private const string DiamondTag = "Diamond";
-        [SerializeField] private AudioSource scoreAudioSource;
         
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag(ScoreTag))
             {
                 GameManager.Instance.Score++;
-                scoreAudioSource.Play();
             }
 
             if (other.gameObject.CompareTag(DiamondTag))

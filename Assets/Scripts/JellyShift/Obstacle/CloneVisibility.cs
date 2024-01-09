@@ -57,7 +57,7 @@ namespace JellyShift.Obstacle
             playerClone.transform.localScale = Vector3.one;
         }
 
-        private void ReduceAlpha()
+        public void ReduceAlpha()
         {
             cloneRenderer.material = playerRenderer.material;
             if (cloneRenderer)

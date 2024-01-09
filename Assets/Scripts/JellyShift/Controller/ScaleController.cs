@@ -4,7 +4,7 @@ namespace JellyShift.Controller
 {
     public class ScaleController : MonoBehaviour
     {
-        private const float ScaleMultiplier = 0.002f;
+        private const float ScaleMultiplier = 0.005f;
 
         [Header("X Values")]
         [SerializeField] private float _minX;

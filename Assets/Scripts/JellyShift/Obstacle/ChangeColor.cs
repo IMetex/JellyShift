@@ -9,17 +9,26 @@ namespace JellyShift.Obstacle
 
         private new Renderer renderer;
         private const string ColorTriggerTag = "ColorTrigger";
+        [SerializeField] private CloneVisibility _cloneVisibility;
 
         private void Start()
         {
             renderer = GetComponentInChildren<Renderer>();
         }
 
-        private void OnTriggerStay(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag(ColorTriggerTag))
             {
                 renderer.material = correctMat;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag(ColorTriggerTag))
+            {
+                _cloneVisibility.ReduceAlpha();
             }
         }
     }
