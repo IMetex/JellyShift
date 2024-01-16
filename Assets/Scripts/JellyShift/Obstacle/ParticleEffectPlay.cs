@@ -14,7 +14,7 @@ namespace JellyShift.Obstacle
         {
             if (other.gameObject.CompareTag(PlayerTag))
             {
-                effect.Play();
+               // effect.Play();
             }
         }
     }

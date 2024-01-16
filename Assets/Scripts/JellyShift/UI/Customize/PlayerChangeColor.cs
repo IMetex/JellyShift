@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,7 +54,7 @@ namespace JellyShift.UI.Customize
         {
             lastButtonPressed = PlayerPrefs.GetString(LastButtonKey, "");
             int colorChangeValue = PlayerPrefs.GetInt(colorButtonKey, 0);
-            
+
             if (colorChangeValue == 1 && lastButtonPressed == gameObject.name)
             {
                 ApplyColorChange();

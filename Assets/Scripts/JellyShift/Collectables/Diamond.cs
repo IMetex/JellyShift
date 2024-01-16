@@ -15,7 +15,7 @@ namespace JellyShift.Collectables
             if (other.gameObject.CompareTag(PlayerTag))
             {
                // transform.DOKill();
-                Instantiate(_particle, transform.position, Quaternion.identity);
+                //Instantiate(_particle, transform.position, Quaternion.identity);
                 gameObject.SetActive(false);
             }
         }

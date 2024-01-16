@@ -8,6 +8,7 @@ namespace JellyShift.Manager
     {
         private const string ObstacleTag = "Obstacle";
         private bool _isBouncing;
+        [SerializeField] private ParticleSystem _loseEffect;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -16,6 +17,7 @@ namespace JellyShift.Manager
                 if (!_isBouncing)
                 {
                     _isBouncing = true;
+                    _loseEffect.Play();
                     Bounce();
                     GameManager.Instance.EndGame();
                 }
