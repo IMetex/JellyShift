@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using DG.Tweening;
 using UnityEngine.SceneManagement;
 using JellyShift.Singleton;
 using UnityEngine;

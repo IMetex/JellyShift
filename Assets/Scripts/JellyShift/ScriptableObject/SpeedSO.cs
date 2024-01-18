@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 
-namespace JellyShift.ScritableObject
+namespace JellyShift.ScriptableObject
 {
     [CreateAssetMenu(fileName = "FILENAME", menuName = "Speed", order = 0)]
-    public class SpeedOS : ScriptableObject
+    public class SpeedSO : UnityEngine.ScriptableObject
     {
-        private float _forwardSpeed;
+        [SerializeField] private float _forwardSpeed;
         public float ForwardSpeed => _forwardSpeed;
 
         [SerializeField] private float speedIncreaseRate;
         [SerializeField] private float maxForwardSpeed;
         [SerializeField] private float startForwardSpeed;
-        
+
 
         public void SetForwardSpeed()
         {

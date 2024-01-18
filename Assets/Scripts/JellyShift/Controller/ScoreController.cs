@@ -1,9 +1,5 @@
-using System;
 using JellyShift.Manager;
-using JellyShift.ObjectPool;
 using UnityEngine;
-using UnityEngine.Serialization;
-
 
 namespace JellyShift.Controller
 {

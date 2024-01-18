@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using JellyShift.Manager;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace JellyShift.UI.Screens

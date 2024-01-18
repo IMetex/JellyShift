@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -14,8 +12,6 @@ namespace JellyShift.Collectables
         {
             if (other.gameObject.CompareTag(PlayerTag))
             {
-               // transform.DOKill();
-                //Instantiate(_particle, transform.position, Quaternion.identity);
                 gameObject.SetActive(false);
             }
         }

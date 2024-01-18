@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace JellyShift.Camera
 {
-    public class CameraController : MonoBehaviour
+    public class CameraShaker : MonoBehaviour
     {
         private const string ScoreTag = "Score";
 

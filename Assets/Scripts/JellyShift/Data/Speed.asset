@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f92bd14d66246d0ae8f7f0972b21b8a, type: 3}
   m_Name: Speed
   m_EditorClassIdentifier: 
+  _forwardSpeed: 15
   speedIncreaseRate: 0.15
   maxForwardSpeed: 45
   startForwardSpeed: 15

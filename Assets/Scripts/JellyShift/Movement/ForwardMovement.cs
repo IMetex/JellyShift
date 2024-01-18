@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
 using JellyShift.Manager;
-using JellyShift.ScritableObject;
+using JellyShift.ScriptableObject;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace JellyShift.Movement
 {
     public class ForwardMovement : MonoBehaviour
     {
-        [SerializeField] private SpeedOS _speedOS;
+        [SerializeField] private SpeedSO _speedSO;
         public bool isObstacle = false;
 
         private void Update()
@@ -18,8 +19,8 @@ namespace JellyShift.Movement
 
             if (CanMove())
             {
-                _speedOS.SetForwardSpeed();
-                transform.position += -transform.forward * (_speedOS.ForwardSpeed * Time.deltaTime);
+                _speedSO.SetForwardSpeed();
+                transform.position += -transform.forward * (_speedSO.ForwardSpeed * Time.deltaTime);
             }
         }
 
@@ -37,6 +38,7 @@ namespace JellyShift.Movement
             return true;
         }
 
+
         private void OnEnable()
         {
             StartCoroutine(nameof(Delay));
@@ -45,18 +47,20 @@ namespace JellyShift.Movement
         private IEnumerator Delay()
         {
             yield return new WaitForSeconds(0.01f);
-            GameManager.Instance.GameEnded += OnGameEnded;
+            if (GameManager.Instance)
+                GameManager.Instance.GameEnded += OnGameEnded;
         }
 
         private void OnDisable()
         {
-            GameManager.Instance.GameEnded -= OnGameEnded;
+            if (GameManager.Instance)
+                GameManager.Instance.GameEnded -= OnGameEnded;
         }
 
         private void OnGameEnded()
         {
-            if (_speedOS)
-                _speedOS.StartSpeedValue();
+            if (_speedSO)
+                _speedSO.StartSpeedValue();
         }
     }
 }
