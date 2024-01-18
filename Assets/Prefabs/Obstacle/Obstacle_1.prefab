@@ -194,9 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eafd1316204344428110c32a4c1d5cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 15
-  speedIncreaseRate: 0.5
-  maxForwardSpeed: 40
+  _speedOS: {fileID: 11400000, guid: 121b6f1164efb1449a0f7b5eebc70465, type: 2}
   isObstacle: 1
 --- !u!114 &130729145649489043
 MonoBehaviour:
